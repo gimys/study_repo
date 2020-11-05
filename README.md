@@ -10,3 +10,7 @@
 - Datetime, Data shift, basic statistics를 활용한 전처리 과정 기록  
 - Weighted RMSE를 활용하여 간단한 machine learning 모델 학습 과정 소개  
 [3번 예제 notebook](https://github.com/gimys/temp_repo/blob/master/pre_processing_solar_cimpete.ipynb)
+## 4. python의 시간 복잡도 계산  
+- python으로 시간 복잡도를 계산 하는 방법
+- 예제 코드를 정리하여 시간 복잡도 계산 연습
+[4번 예제 notebook(아직 미완성)](https://github.com/gimys/temp_repo/blob/master/아직이요.ipynb)  
