@@ -1,0 +1,26 @@
+## 암호와 복호화 코드 저장
+
+from Crypto.Cipher import AES
+import base64
+import hashlib
+
+
+BS = AES.block_size
+pad = lambda s: s + (BS - len(s) % BS) * chr(BS - len(s) % BS)
+unpad = lambda s : s[0:-s[-1]]
+
+## example data
+key = "12345678901234567890123456789012"; # 32bit
+iv = '1234567890123456' # 16bit
+beforeCipher = 'test string'
+
+cipher = AES.new(key, AES.MODE_CBC, IV=iv)
+beforeCipher = pad(beforeCipher)
+afterCipher = base64.b64encode(cipher.encrypt(beforeCipher))
+print('Cipher string: ', afterCipher)
+
+cipher = AES.new(key, AES.MODE_CBC, IV=iv)
+deciphed = cipher.decrypt(base64.b64decode(afterCipher))
+deciphed = unpad(deciphed)
+deciphed = deciphed.decode()
+print('Decipher string: ', deciphed)
